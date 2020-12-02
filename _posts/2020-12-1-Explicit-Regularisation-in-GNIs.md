@@ -6,10 +6,12 @@ My recent [Neurips paper](https://arxiv.org/abs/2007.07368), written with my fri
 
 These Gaussian noise injections (GNIs) have an effect in the Fourier domain, which we illustrate in the image below. Each coloured dot represents a neuron's activations. We add GNIs, represented as circles, to each layer's activations bar the output layer. GNIs induce a network for which each layer learns a progressively lower frequency function, represented as a sinusoid matching in colour to its corresponding layer. 
 
-![frequencydiag](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/frequencydiag.png)Gaussian Noise Injections
+![frequencydiag](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/frequencydiag.png)
 
-Consider an $$L​$$ layer network with no noise injections and a non-linearity $$\phi$$ at each layer.
-We obtain the activations $${\mathbf{h}} = \{{\mathbf{h}}_0, ... , {\mathbf{h}}_{L} \}$$, where $$\mathbf{h}_{0}=\mathbf{x}$$ is the input data _before_ any noise is injected. For a network consisting of dense layers we have that: 
+#### Gaussian Noise Injections
+
+Consider an $$L$$ layer network with no noise injections and a non-linearity $$\phi$$ at each layer.
+We obtain the activations $$\mathbf{h} = \{\mathbf{h}_0, ... , \mathbf{h}_{L} \}$$, where $$\mathbf{h}_{0}=\mathbf{x}$$ is the input data _before_ any noise is injected. For a network consisting of dense layers we have that: 
 
 $$\mathbf{h}_{k}(\mathbf{x})=
 \phi(\mathbf{W}_k \mathbf{h}_{k-1}(\mathbf{x}))$$
@@ -22,7 +24,7 @@ We denote the intermediate, soon-to-be-noised value of an activation as $$\hat{\
 $$\hat{\mathbf{h}}_{k}(\mathbf{x})= \phi\left(\mathbf{W}_{k}\tilde{\mathbf{h}}_{k-1}(\mathbf{x})\right)\,, \qquad  
 \tilde{\mathbf{h}}_{k}(\mathbf{x}) = \hat{\mathbf{h}}_{k}(\mathbf{x}) \circ \mathbf{\epsilon}_{k}\,$$
 
-where $$\circ​$$ is some element-wise operation. 
+where $$\circ$$ is some element-wise operation. 
 
 We can, for example, add or multiply Gaussian noise to each hidden layer unit. 
 In the additive case, we obtain: 
@@ -39,9 +41,9 @@ To understand the regularisation induced by GNIs, we want to study the regularis
 As such, we study the explicit regularisation these injections induce by way of the expected regulariser.  Our work demonstrates that this expected regulariser contains a term $$R​$$ which is the main contributor of the effect of GNIs. 
 
 $$ R(\mathcal{B}; \mathbf{\theta}) = \mathbb{E}_{(\mathbf{x},\mathbf{y}) \sim \mathcal{B}} \left[\frac{1}{2}\sum_{k=0}^{L-1}\left[\sigma_k^2\mathrm{Tr}\left(\mathbf{J}^T_{k}(\mathbf{x})
-    \mathbf{H}_{L}(\mathbf{x}, \mathbf{y})\mathbf{J}_{k}(\mathbf{x})\right)\right] \right].​$$
+    \mathbf{H}_{L}(\mathbf{x}, \mathbf{y})\mathbf{J}_{k}(\mathbf{x})\right)\right] \right].$$
 
-Where $$\mathcal{B}​$$ is a mini-batch process, $$(\mathbf{x}, \mathbf{y})​$$ is a data-label pair and for For compactness of notation, we denote each layer's Jacobian as $$\mathbf{J}_k \in \mathbb{R}^{d_L \times d_k}​$$ and the Hessian of the loss with respect to the final layer as $$\mathbf{H}_L \in \mathbb{R}^{d_L \times d_L}​$$). Each entry of $$\mathbf{J}_{k}​$$ is a partial derivative  of $$f^k_{\theta,i}(\cdot)​$$, the function from layer $$k​$$ to the $$i^{\mathrm{th}}​$$ network output, $$i = 1 ... d_L​$$. 
+Where $$\mathcal{B}$$ is a mini-batch process, $$(\mathbf{x}, \mathbf{y})$$ is a data-label pair and for For compactness of notation, we denote each layer's Jacobian as $$\mathbf{J}_k \in \mathbb{R}^{d_L \times d_k}$$ and the Hessian of the loss with respect to the final layer as $$\mathbf{H}_L \in \mathbb{R}^{d_L \times d_L}$$). Each entry of $$\mathbf{J}_{k}$$ is a partial derivative  of $$f^k_{\theta,i}(\cdot)​$$, the function from layer $$k$$ to the $$i^{\mathrm{th}}$$ network output, $$i = 1 ... d_L$$. 
 
 $$    \mathbf{J}_{k}(\mathbf{x}) = \begin{bmatrix} 
     \frac{f^k_{\theta,1}}{\partial h_{k,1}} & \frac{f^k_{\theta,1}}{\partial h_{k,2}} & \dots \\
@@ -62,7 +64,7 @@ By way of Sobolev spaces we show that the above regulariser corresponds to a pen
 
 $$ R(\mathcal{B}; \mathbf{\theta}) = \frac{1}{2}\sum_{k=0}^{L-1} \sigma_k^2 \sum_{i} \int_{\mathbb{R}^{d_k}} \sum^{d_k}_{j=1} \Bigr|\mathcal{G}^k_i(\mathbf{\omega},j)\overline{ \mathcal{G}^k_i(\mathbf{\omega},j) * \mathcal{P}(\mathbf{\omega})}\Bigr|   d\mathbf{\omega} ​$$
 
-here $$\mathbf{h}_0 =\mathbf{x}​$$, $$i​$$ indexes over output neurons, and $$\mathcal{G}^k_i(\mathbf{\omega}, j) = \mathbf{\omega}_j \mathcal{F}^k_i(\mathbf{\omega})​$$, where $$\mathcal{F}^k_i​$$ is the Fourier transform of the function $$f^k_{\theta,i}(\cdot)​$$. $$\mathcal{P}​$$ is the Fourier transform or the `characteristic function' of the data density function. 
+here $$\mathbf{h}_0 =\mathbf{x}$$, $$i$$ indexes over output neurons, and $$\mathcal{G}^k_i(\mathbf{\omega}, j) = \mathbf{\omega}_j \mathcal{F}^k_i(\mathbf{\omega})$$, where $$\mathcal{F}^k_i$$ is the Fourier transform of the function $$f^k_{\theta,i}(\cdot)$$. $$\mathcal{P}$$ is the Fourier transform or the `characteristic function' of the data density function. 
 
 This term can look pretty overwhelming but the key takeaway here is that the terms $$\mathcal{G}^k_i(\mathbf{\omega}, j) become large in magnitude when functions have high-frequency components. This implies that GNIs penalise neural networks that learn functions with high-frequency components. 
 
@@ -72,11 +74,11 @@ To illustrate what this entails visually, check out the functions learnt by neur
 
 
 
-![noGNIFT](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/learnt_function_baseline.png) ![gnifirt](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/spectral_dynamics_baseline.png)
+![noGNIFT](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/learnt_function_baseline.png){:height="50%" width="50%"} ![gnifirt](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/spectral_dynamics_baseline.png){:height="50%" width="50%"}
 
 ##### GNIs
 
-![noGNIFT](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/learnt_function_noise.png)![GNIFT](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/spectral_dynamics_noise.png) 
+![noGNIFT](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/learnt_function_noise.png){:height="50%" width="50%"}![GNIFT](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/spectral_dynamics_noise.png) {:height="50%" width="50%"}
 
 
 
@@ -85,11 +87,11 @@ Its pretty apparent that the models trained with learn a lower frequency functio
 Its also interesting to note that there is a recursive structure to the penalisation induced by $$R(\cdot)$$. 
 Consider the layer-to-layer functions which map from a layer $$k-1$$ to $$k$$, $$\mathbf{h}_{k}(\mathbf{h}_{k-1}(\mathbf{x}))$$. $$\|D \mathbf{h}_{k}(\mathbf{h}_{k-1}(\mathbf{x}))\|_2^2$$ is penalised $$k$$ times in $$R(\cdot)$$ as this derivative appears in $$\mathbf{J}_0, \mathbf{J}_1 \dots \mathbf{J}_{k-1}$$ due to the chain rule. As such, when training with GNIs, we can expect the norm of $$\|D \mathbf{h}_{k}(\mathbf{h}_{k-1}(\mathbf{x}))\|_2^2$$ to decrease as the layer index $$k$$ increases (i.e the closer we are to the network output). This norm measure the layer-layer frequency learnt by each $$\mathbf{h}_k$$. You can read the paper for the full details of this connection. 
 
-Basically larger values of this norm are indicative of layer-layer functions with higher frequency content, and conversely smaller values of this norm are indicative of layer-layer functions with lower frequency content. In networks with $$\mathrm{ReLU}​$$ activations $$D \mathbf{h}_{k}(\mathbf{h}_{k-1}(\mathbf{x})) = \tilde{\mathbf{W}}_k​$$.$$\tilde{\mathbf{W}}_k​$$ is obtained from the original weight matrix $$\mathbf{W}_k​$$ by setting its $$i^{\mathrm{th}}​$$ column to zero whenever the neuron $$i​$$ of the $$(k)^{\mathrm{th}}​$$ layer is inactive.
+Basically larger values of this norm are indicative of layer-layer functions with higher frequency content, and conversely smaller values of this norm are indicative of layer-layer functions with lower frequency content. In networks with $$\mathrm{ReLU}$$ activations $$D \mathbf{h}_{k}(\mathbf{h}_{k-1}(\mathbf{x})) = \tilde{\mathbf{W}}_k​$$.$$\tilde{\mathbf{W}}_k$$ is obtained from the original weight matrix $$\mathbf{W}_k$$ by setting its $$i^{\mathrm{th}}​$$ column to zero whenever the neuron $$i​$$ of the $$(k)^{\mathrm{th}}$$ layer is inactive.
 
 We plot these norms for each layer in a $$\mathrm{ReLU}$$ network. The plot to the left corresponds to the networks trained without GNIs, the plot to the right is for networks trained with GNIs. 
 
-![noGNIFT](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/layer_layer_grad_nonoise.png)![noGNIFT](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/layer_layer_grad_noise.png)
+![noGNIFT](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/layer_layer_grad_nonoise.png){:height="50%" width="50%"}![noGNIFT](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/layer_layer_grad_noise.png){:height="50%" width="50%"}
 
 
 
