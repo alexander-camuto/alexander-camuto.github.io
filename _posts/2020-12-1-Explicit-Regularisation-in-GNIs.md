@@ -21,8 +21,9 @@ First, let $$\mathbf{\epsilon}$$ be the set of noise injections at each layer:  
 When performing a noise injection procedure, the value of the next layer's activations depends on the noised value of the previous layer.
 We denote the intermediate, soon-to-be-noised value of an activation as $$\hat{\mathbf{h}}_{k}$$ and the subsequently noised value as $$\tilde{\mathbf{h}}_{k}$$: 
 
-$$\hat{\mathbf{h}}_{k}(\mathbf{x})= \phi\left(\mathbf{W}_{k}\tilde{\mathbf{h}}_{k-1}(\mathbf{x})\right)\,, \qquad  
-\tilde{\mathbf{h}}_{k}(\mathbf{x}) = \hat{\mathbf{h}}_{k}(\mathbf{x}) \circ \mathbf{\epsilon}_{k}\,$$
+$$\hat{\mathbf{h}}_{k}(\mathbf{x})= \phi\left(\mathbf{W}_{k}\tilde{\mathbf{h}}_{k-1}(\mathbf{x})\right)\,$$
+
+$$\tilde{\mathbf{h}}_{k}(\mathbf{x}) = \hat{\mathbf{h}}_{k}(\mathbf{x}) \circ \mathbf{\epsilon}_{k}\,$$
 
 where $$\circ$$ is some element-wise operation. 
 
