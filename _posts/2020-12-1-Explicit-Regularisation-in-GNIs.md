@@ -6,7 +6,7 @@ My recent [Neurips paper](https://arxiv.org/abs/2007.07368), written with my fri
 
 These Gaussian noise injections (GNIs) have an effect in the Fourier domain, which we illustrate in the image below. Each coloured dot represents a neuron's activations. We add GNIs, represented as circles, to each layer's activations bar the output layer. GNIs induce a network for which each layer learns a progressively lower frequency function, represented as a sinusoid matching in colour to its corresponding layer. 
 
-![frequencydiag](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/frequencydiag.png)
+![frequencydiag](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/frequencydiag2.png)
 
 #### Gaussian Noise Injections
 
@@ -68,21 +68,14 @@ here $$\mathbf{h}_0 =\mathbf{x}$$, $$i$$ indexes over output neurons, and $$\mat
 
 This term can look pretty overwhelming but the key takeaway here is that the terms $$\mathcal{G}^k_i(\mathbf{\omega}, j) become large in magnitude when functions have high-frequency components. This implies that GNIs penalise neural networks that learn functions with high-frequency components. 
 
-To illustrate what this entails visually, check out the functions learnt by neural networks trained with and without GNIs below. We train neural networks to regress mixtures of sinusoids and plot both the function learnt by the networks and the Fourier transform of this learnt function. 
+To illustrate what this entails visually, check out the functions learnt by neural networks trained with and without GNIs below. We train neural networks to regress mixtures of sinusoids and plot both the function learnt by the networks and the Fourier transform of this learnt function as training progresses. 
 
-##### No GNIs
-
-
-
-![noGNIFT](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/learnt_function_baseline.png){:height="50%" width="50%"} ![gnifirt](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/spectral_dynamics_baseline.png){:height="50%" width="50%"}
-
-##### GNIs
-
-![noGNIFT](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/learnt_function_noise.png){:height="50%" width="50%"}![GNIFT](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/spectral_dynamics_noise.png) {:height="50%" width="50%"}
+Learnt Function no GNIs |  Learnt Function GNIs | Fourier Transform no GNIs | Fourier Transform GNIs 
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/learnt_function_baseline.png" width="200"/>  | <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/learnt_function_noise.png" width="200"/> | <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/spectral_dynamics_baseline.png" width="200"/> | <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/spectral_dynamics_noise.png" width="200"/>
 
 
-
-Its pretty apparent that the models trained with learn a lower frequency function that is less likely to overfit. 
+It is pretty apparent that the models trained with learn a lower frequency function that is less likely to overfit. 
 
 Its also interesting to note that there is a recursive structure to the penalisation induced by $$R(\cdot)$$. 
 Consider the layer-to-layer functions which map from a layer $$k-1$$ to $$k$$, $$\mathbf{h}_{k}(\mathbf{h}_{k-1}(\mathbf{x}))$$. $$\|D \mathbf{h}_{k}(\mathbf{h}_{k-1}(\mathbf{x}))\|_2^2$$ is penalised $$k$$ times in $$R(\cdot)$$ as this derivative appears in $$\mathbf{J}_0, \mathbf{J}_1 \dots \mathbf{J}_{k-1}$$ due to the chain rule. As such, when training with GNIs, we can expect the norm of $$\|D \mathbf{h}_{k}(\mathbf{h}_{k-1}(\mathbf{x}))\|_2^2$$ to decrease as the layer index $$k$$ increases (i.e the closer we are to the network output). This norm measure the layer-layer frequency learnt by each $$\mathbf{h}_k$$. You can read the paper for the full details of this connection. 
@@ -91,8 +84,9 @@ Basically larger values of this norm are indicative of layer-layer functions wit
 
 We plot these norms for each layer in a $$\mathrm{ReLU}$$ network. The plot to the left corresponds to the networks trained without GNIs, the plot to the right is for networks trained with GNIs. 
 
-![noGNIFT](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/layer_layer_grad_nonoise.png){:height="50%" width="50%"}![noGNIFT](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/layer_layer_grad_noise.png){:height="50%" width="50%"}
-
+no GNIs | GNIs
+:-------------------------:|:-------------------------:
+<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/layer_layer_grad_nonoise.png" width="200"/> |<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/layer_layer_grad_noise.png" width="200"/>
 
 
 For GNI models, deeper layers learn smaller $$\|\tilde{\mathbf{W}}_k\|_2^2$$, with the first hidden layer having the largest trace and norm, the second layer having the second largest values and so on so forth. This striation and ordering is notably absent in the models trained without GNIs. This effectively demonstrates that this Fourier domain penalisation disproportionately affects layers nearest to the network output, inducing a network that learns a lower frequency function at each successive layer. ``
