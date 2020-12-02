@@ -6,9 +6,27 @@
 .page,
 .post {
   margin-bottom: 4em;
+  
+  blockquote {
+    margin: 1.8em .8em;
+    border-left: 2px solid $white;
+    padding: 0.1em 1em;
+    color: $white;
+    font-size: 22px;
+    font-style: italic;
+  }
 
   li + li {
     margin-top: .25rem;
+  }
+  
+  .comments {
+    margin-top: 10px;
+  }
+
+  .read-more {
+    text-transform: uppercase;
+    font-size: 15px;
   }
 }
 
