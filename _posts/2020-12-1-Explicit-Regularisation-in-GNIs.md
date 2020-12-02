@@ -68,9 +68,9 @@ here $$\mathbf{h}_0 =\mathbf{x}$$, $$i$$ indexes over output neurons, and $$\mat
 
 This term can look pretty overwhelming but the key takeaway here is that the terms $$\mathcal{G}^k_i(\mathbf{\omega}, j) become large in magnitude when functions have high-frequency components. This implies that GNIs penalise neural networks that learn functions with high-frequency components. 
 
-To illustrate what this entails visually, check out the functions learnt by neural networks trained with and without GNIs below. We train neural networks to regress mixtures of sinusoids and plot both the function learnt by the networks and the Fourier transform of this learnt function as training progresses. 
+To illustrate what this entails visually, check out the functions learnt by neural networks trained with and without GNIs below. We train neural networks to regress mixtures of sinusoids and plot both the function learnt by the networks and the Fourier transform (FT) of this learnt function as training progresses. 
 
-|Learnt Function no GNIs |  Learnt Function GNIs | Fourier Transform no GNIs | Fourier Transform GNIs  |  
+|Function no GNIs |  Function GNIs | FT no GNIs | FT GNIs  |  
 -------------------------|-------------------------|-------------------------|-------------------------|
 |<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/learnt_function_baseline.png" width="200"/>  | <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/learnt_function_noise.png" width="200"/> | <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/spectral_dynamics_baseline.png" width="200"/> | <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/spectral_dynamics_noise.png" width="200"/>|
 
