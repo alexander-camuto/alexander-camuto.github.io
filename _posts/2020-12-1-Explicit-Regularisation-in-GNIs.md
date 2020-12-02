@@ -34,7 +34,7 @@ $$\tilde{\mathbf{h}}_k(\mathbf{x}) = \hat{\mathbf{h}}_k(\mathbf{x}) + \mathbf{\e
 
 We can express the effect of the Gaussian noise injection on the cost function $$\mathcal{L}$$ as an added term $$\Delta\mathcal{L}$$, which is dependent on the noise additions $\v{\epsilon}$ on the previous hidden layer activations. 
 \begin{equation}
-\tilde{\mathcal{L}}(\mathcal{B};\mathbf{\theta}, \v{\epsilon}) =  \mathcal{L}(\mathcal{B}; \mathbf{\theta}) + \Delta\mathcal{L}(\mathcal{B};\mathbf{\theta},\mathbf{\epsilon}_{L})
+\tilde{\mathcal{L}}(\mathcal{B};\mathbf{\theta}, \mathbf{\epsilon}) =  \mathcal{L}(\mathcal{B}; \mathbf{\theta}) + \Delta\mathcal{L}(\mathcal{B};\mathbf{\theta},\mathbf{\epsilon}_{L})
 \end{equation}
 
 
@@ -42,7 +42,7 @@ We can express the effect of the Gaussian noise injection on the cost function $
 
 To understand the regularisation induced by GNIs, we want to study the regularisation that these injections induce _consistently_ from batch to batch. To do so, we want to remove the stochastic component of the GNI regularisation and extract a regulariser that is of consistent sign. This consistency of sign is important. Regularisers that change sign batch-to-batch do not give a consistent objective to optimise, making them unfit as regularisers [1]. 
 
-As such, we study the explicit regularisation these injections induce by way of the expected regulariser $$\expect_{\v{\epsilon} \sim p(\v{\epsilon})} \left[ \Delta\mathcal{L}(\cdot) \right]$$.  Our work demonstrates that this expected regulariser contains a term $$R$$ which is the main contributor of the effect of GNIs. 
+As such, we study the explicit regularisation these injections induce by way of the expected regulariser $$\mathbb{E}_{\mathbf{\epsilon} \sim p(\mathbf{\epsilon})} \left[ \Delta\mathcal{L}(\cdot) \right]$$.  Our work demonstrates that this expected regulariser contains a term $$R$$ which is the main contributor of the effect of GNIs. 
 
 $$ R(\mathcal{B}; \mathbf{\theta}) = \mathbb{E}_{(\mathbf{x},\mathbf{y}) \sim \mathcal{B}} \left[\frac{1}{2}\sum_{k=0}^{L-1}\left[\sigma_k^2\mathrm{Tr}\left(\mathbf{J}^T_{k}(\mathbf{x})
     \mathbf{H}_{L}(\mathbf{x}, \mathbf{y})\mathbf{J}_{k}(\mathbf{x})\right)\right] \right].$$
