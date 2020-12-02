@@ -10,7 +10,7 @@ These Gaussian noise injections (GNIs) have an effect in the Fourier domain, whi
 
 #### Gaussian Noise Injections
 
-Consider an feed-forward neural network with $M$ parameters divided into $$L$$ layers: $$\mathbf{\theta} = \{\mathbf{W}_1,...,\mathbf{W}_L\}$$, $$\mathbf{\theta} \in \mathbb{R}^M$$, and a non-linearity $$\phi$$ at each layer.
+Consider an feed-forward neural network with $$M$$ parameters divided into $$L$$ layers: $$\mathbf{\theta} = \{\mathbf{W}_1,...,\mathbf{W}_L\}$$, $$\mathbf{\theta} \in \mathbb{R}^M$$, and a non-linearity $$\phi$$ at each layer.
 We obtain the activations $$\mathbf{h} = \{\mathbf{h}_0, ... , \mathbf{h}_{L} \}$$, where $$\mathbf{h}_{0}=\mathbf{x}$$ is the input data _before_ any noise is injected. For a network consisting of dense layers we have that: 
 
 $$\mathbf{h}_{k}(\mathbf{x})=
