@@ -74,9 +74,14 @@ This term can look pretty overwhelming but the key takeaway here is that the ter
 
 To illustrate what this entails visually, check out the functions learnt by neural networks trained with and without GNIs below. We train neural networks to regress mixtures of sinusoids and plot both the function learnt by the networks and the Fourier transform (FT) of this learnt function as training progresses. 
 
-|Function no GNIs |  Function GNIs | FT no GNIs | FT GNIs  |  
--------------------------|-------------------------|-------------------------|-------------------------|
-|<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/learnt_function_baseline.png" width="200"/>  | <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/learnt_function_noise.png" width="200"/> | <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/spectral_dynamics_baseline.png" width="200"/> | <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/spectral_dynamics_noise.png" width="200"/>|
+|Function no GNIs |  Function GNIs | 
+-------------------------|-------------------------|
+|<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/learnt_function_baseline.png" width="200"/>  | <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/learnt_function_noise.png" width="200"/> | 
+
+
+| FT no GNIs | FT GNIs  |  
+-------------------------|-------------------------|
+| <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/spectral_dynamics_baseline.png" width="200"/> | <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/spectral_dynamics_noise.png" width="200"/>|
 
 
 It is pretty apparent that the models trained with learn a lower frequency function that is less likely to overfit. 
