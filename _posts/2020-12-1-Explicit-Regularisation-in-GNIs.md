@@ -70,9 +70,9 @@ This term can look pretty overwhelming but the key takeaway here is that the ter
 
 To illustrate what this entails visually, check out the functions learnt by neural networks trained with and without GNIs below. We train neural networks to regress mixtures of sinusoids and plot both the function learnt by the networks and the Fourier transform of this learnt function as training progresses. 
 
-Learnt Function no GNIs |  Learnt Function GNIs | Fourier Transform no GNIs | Fourier Transform GNIs 
-:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/learnt_function_baseline.png" width="200"/>  | <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/learnt_function_noise.png" width="200"/> | <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/spectral_dynamics_baseline.png" width="200"/> | <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/spectral_dynamics_noise.png" width="200"/>
+|Learnt Function no GNIs |  Learnt Function GNIs | Fourier Transform no GNIs | Fourier Transform GNIs  |  
+-------------------------|-------------------------|-------------------------|-------------------------|
+|<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/learnt_function_baseline.png" width="200"/>  | <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/learnt_function_noise.png" width="200"/> | <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/spectral_dynamics_baseline.png" width="200"/> | <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/spectral_dynamics_noise.png" width="200"/>|
 
 
 It is pretty apparent that the models trained with learn a lower frequency function that is less likely to overfit. 
@@ -84,9 +84,9 @@ Basically larger values of this norm are indicative of layer-layer functions wit
 
 We plot these norms for each layer in a $$\mathrm{ReLU}$$ network. The plot to the left corresponds to the networks trained without GNIs, the plot to the right is for networks trained with GNIs. 
 
-no GNIs | GNIs
-:-------------------------:|:-------------------------:
-<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/layer_layer_grad_nonoise.png" width="200"/> |<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/layer_layer_grad_noise.png" width="200"/>
+|no GNIs | GNIs|
+|--------|-------------------------|
+|<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/layer_layer_grad_nonoise.png" width="200"/> |<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/layer_layer_grad_noise.png" width="200"/>|
 
 
 For GNI models, deeper layers learn smaller $$\|\tilde{\mathbf{W}}_k\|_2^2$$, with the first hidden layer having the largest trace and norm, the second layer having the second largest values and so on so forth. This striation and ordering is notably absent in the models trained without GNIs. This effectively demonstrates that this Fourier domain penalisation disproportionately affects layers nearest to the network output, inducing a network that learns a lower frequency function at each successive layer. ``
