@@ -6,7 +6,7 @@ My recent [Neurips paper](https://arxiv.org/abs/2007.07368), written with my fri
 
 These Gaussian noise injections (GNIs) have an effect in the Fourier domain, which we illustrate in the image below. Each coloured dot represents a neuron's activations. We add GNIs, represented as circles, to each layer's activations bar the output layer. GNIs induce a network for which each layer learns a progressively lower frequency function, represented as a sinusoid matching in colour to its corresponding layer. 
 
-![frequencydiag](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/frequencydiag2.png)
+![frequencydiag](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/frequencydiag2dark.png)
 
 #### Gaussian Noise Injections
 
@@ -53,7 +53,9 @@ $$    \mathbf{J}_{k}(\mathbf{x}) = \begin{bmatrix}
     \frac{f^k_{\theta,1}}{\partial h_{k,1}} & \frac{f^k_{\theta,1}}{\partial h_{k,2}} & \dots \\
     \vdots & \ddots & \\
     \frac{f^k_{\theta,d_L}}{\partial h_{k,1}} &        & \frac{f^k_{\theta,d_L}}{\partial h_{k,d_k}} 
-    \end{bmatrix} \qquad    \mathbf{H}_{L}(\mathbf{x}, \mathbf{y}) = \begin{bmatrix} 
+    \end{bmatrix} $$
+    
+$$ \mathbf{H}_{L}(\mathbf{x}, \mathbf{y}) = \begin{bmatrix} 
     \frac{\partial^2 \mathcal{L}}{\partial h^2_{L,1}} & \frac{\partial^2 \mathcal{L}}{\partial h_{L,1}\partial h_{L,2}} & \dots \\
     \vdots & \ddots & \\
     \frac{\partial^2 \mathcal{L}}{\partial h_{L,d_L}\partial h_{L,1}} & &      \frac{\partial^2 \mathcal{L}}{\partial h^2_{L,d_L}} 
@@ -70,13 +72,18 @@ $$ R(\mathcal{B}; \mathbf{\theta}) = \frac{1}{2}\sum_{k=0}^{L-1} \sigma_k^2 \sum
 
 here $$\mathbf{h}_0 =\mathbf{x}$$, $$i$$ indexes over output neurons, and $$\mathcal{G}^k_i(\mathbf{\omega}, j) = \mathbf{\omega}_j \mathcal{F}^k_i(\mathbf{\omega})$$, where $$\mathcal{F}^k_i$$ is the Fourier transform of the function $$f^k_{\theta,i}(\cdot)$$. $$\mathcal{P}$$ is the Fourier transform or the `characteristic function' of the data density function. 
 
-This term can look pretty overwhelming but the key takeaway here is that the terms $$\mathcal{G}^k_i(\mathbf{\omega}, j) become large in magnitude when functions have high-frequency components. This implies that GNIs penalise neural networks that learn functions with high-frequency components. 
+This term can look pretty overwhelming but the key takeaway here is that the terms $$\mathcal{G}^k_i(\mathbf{\omega}, j)$$ become large in magnitude when functions have high-frequency components. This implies that GNIs penalise neural networks that learn functions with high-frequency components. 
 
 To illustrate what this entails visually, check out the functions learnt by neural networks trained with and without GNIs below. We train neural networks to regress mixtures of sinusoids and plot both the function learnt by the networks and the Fourier transform (FT) of this learnt function as training progresses. 
 
-|Function no GNIs |  Function GNIs | FT no GNIs | FT GNIs  |  
--------------------------|-------------------------|-------------------------|-------------------------|
-|<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/learnt_function_baseline.png" width="200"/>  | <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/learnt_function_noise.png" width="200"/> | <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/spectral_dynamics_baseline.png" width="200"/> | <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/spectral_dynamics_noise.png" width="200"/>|
+|Function no GNIs |  Function GNIs | 
+-------------------------|-------------------------|
+|<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/learnt_function_baseline.png" width="200"/>  | <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/learnt_function_noise.png" width="200"/> | 
+
+
+| FT no GNIs | FT GNIs  |  
+-------------------------|-------------------------|
+| <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/spectral_dynamics_baseline.png" width="200"/> | <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/spectral_dynamics_noise.png" width="200"/>|
 
 
 It is pretty apparent that the models trained with learn a lower frequency function that is less likely to overfit. 
