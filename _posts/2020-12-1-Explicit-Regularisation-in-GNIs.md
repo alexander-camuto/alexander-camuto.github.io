@@ -53,7 +53,9 @@ $$    \mathbf{J}_{k}(\mathbf{x}) = \begin{bmatrix}
     \frac{f^k_{\theta,1}}{\partial h_{k,1}} & \frac{f^k_{\theta,1}}{\partial h_{k,2}} & \dots \\
     \vdots & \ddots & \\
     \frac{f^k_{\theta,d_L}}{\partial h_{k,1}} &        & \frac{f^k_{\theta,d_L}}{\partial h_{k,d_k}} 
-    \end{bmatrix} \qquad    \mathbf{H}_{L}(\mathbf{x}, \mathbf{y}) = \begin{bmatrix} 
+    \end{bmatrix} $$
+    
+$$ \mathbf{H}_{L}(\mathbf{x}, \mathbf{y}) = \begin{bmatrix} 
     \frac{\partial^2 \mathcal{L}}{\partial h^2_{L,1}} & \frac{\partial^2 \mathcal{L}}{\partial h_{L,1}\partial h_{L,2}} & \dots \\
     \vdots & \ddots & \\
     \frac{\partial^2 \mathcal{L}}{\partial h_{L,d_L}\partial h_{L,1}} & &      \frac{\partial^2 \mathcal{L}}{\partial h^2_{L,d_L}} 
