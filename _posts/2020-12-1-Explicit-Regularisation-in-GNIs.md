@@ -72,7 +72,7 @@ $$ R(\mathcal{B}; \mathbf{\theta}) = \frac{1}{2}\sum_{k=0}^{L-1} \sigma_k^2 \sum
 
 here $$\mathbf{h}_0 =\mathbf{x}$$, $$i$$ indexes over output neurons, and $$\mathcal{G}^k_i(\mathbf{\omega}, j) = \mathbf{\omega}_j \mathcal{F}^k_i(\mathbf{\omega})$$, where $$\mathcal{F}^k_i$$ is the Fourier transform of the function $$f^k_{\theta,i}(\cdot)$$. $$\mathcal{P}$$ is the Fourier transform or the `characteristic function' of the data density function. 
 
-This term can look pretty overwhelming but the key takeaway here is that the terms $$\mathcal{G}^k_i(\mathbf{\omega}, j) become large in magnitude when functions have high-frequency components. This implies that GNIs penalise neural networks that learn functions with high-frequency components. 
+This term can look pretty overwhelming but the key takeaway here is that the terms $$\mathcal{G}^k_i(\mathbf{\omega}, j)$$ become large in magnitude when functions have high-frequency components. This implies that GNIs penalise neural networks that learn functions with high-frequency components. 
 
 To illustrate what this entails visually, check out the functions learnt by neural networks trained with and without GNIs below. We train neural networks to regress mixtures of sinusoids and plot both the function learnt by the networks and the Fourier transform (FT) of this learnt function as training progresses. 
 
