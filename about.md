@@ -23,6 +23,8 @@ In my spare time I take [photos](https://www.instagram.com/dantino11).
 
 <sup>' equal contributions</sup>
 
+[Google Scholar](https://scholar.google.com/citations?user=BUJ6H04AAAAJ&hl)
+
 ### Contact me
 
 [acamuto@turing.ac.uk](acamuto@turing.ac.uk)
