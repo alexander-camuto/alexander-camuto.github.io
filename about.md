@@ -4,12 +4,15 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+I am a DPhil candidate at the University of Oxford and at the Alan Turing Institute. 
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+I have two streams of research. The first focuses on studying deep probabilistic models, specifically their adversarial robustness and their ability to build representations that are independent and human-interpretable. 
+The second dives uses functional analysis and Langevin dynamics to study commonly used regularisation methods, such as Gaussian noise injections.
+
+In my spare time I take photos (@dantino11 on Instagram). 
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[acamuto@turing.ac.uk](acamuto@turing.ac.uk)
