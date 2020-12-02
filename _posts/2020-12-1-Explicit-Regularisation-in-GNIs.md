@@ -10,7 +10,7 @@ These Gaussian noise injections (GNIs) have an effect in the Fourier domain, whi
 
 #### Gaussian Noise Injections
 
-Consider an $$L$$ layer network with no noise injections and a non-linearity $$\phi$$ at each layer.
+Consider an feed-forward neural network with $M$ parameters divided into $L$ layers: $$\v{\theta} = \{\mathbf{W}_1,...,\mathbf{W}_L\}$$, $$\mathbf{\theta} \in \mathbb{R}^M$$, and a non-linearity $$\phi$$ at each layer.
 We obtain the activations $$\mathbf{h} = \{\mathbf{h}_0, ... , \mathbf{h}_{L} \}$$, where $$\mathbf{h}_{0}=\mathbf{x}$$ is the input data _before_ any noise is injected. For a network consisting of dense layers we have that: 
 
 $$\mathbf{h}_{k}(\mathbf{x})=
@@ -32,13 +32,17 @@ In the additive case, we obtain:
 $$\tilde{\mathbf{h}}_k(\mathbf{x}) = \hat{\mathbf{h}}_k(\mathbf{x}) + \mathbf{\epsilon}_k, 
 \qquad \mathbf{\epsilon}_k \sim \mathcal{N}(0,\sigma_k^2\mathbf{I}).  $$
 
+We can express the effect of the Gaussian noise injection on the cost function $$\mathcal{L}$$ as an added term $$\Delta\mathcal{L}$$, which is dependent on the noise additions $\v{\epsilon}$ on the previous hidden layer activations. 
+\begin{equation}
+\tilde{\mathcal{L}}(\mathcal{B};\mathbf{\theta}, \v{\epsilon}) =  \mathcal{L}(\mathcal{B}; \mathbf{\theta}) + \Delta\mathcal{L}(\mathcal{B};\mathbf{\theta},\mathbf{\epsilon}_{L})
+\end{equation}
 
 
 #### Explicit Regularisation of Gaussian Noise Injections
 
 To understand the regularisation induced by GNIs, we want to study the regularisation that these injections induce _consistently_ from batch to batch. To do so, we want to remove the stochastic component of the GNI regularisation and extract a regulariser that is of consistent sign. This consistency of sign is important. Regularisers that change sign batch-to-batch do not give a consistent objective to optimise, making them unfit as regularisers [1]. 
 
-As such, we study the explicit regularisation these injections induce by way of the expected regulariser.  Our work demonstrates that this expected regulariser contains a term $$R​$$ which is the main contributor of the effect of GNIs. 
+As such, we study the explicit regularisation these injections induce by way of the expected regulariser $$\expect_{\v{\epsilon} \sim p(\v{\epsilon})} \left[ \Delta\mathcal{L}(\cdot) \right]$$.  Our work demonstrates that this expected regulariser contains a term $$R$$ which is the main contributor of the effect of GNIs. 
 
 $$ R(\mathcal{B}; \mathbf{\theta}) = \mathbb{E}_{(\mathbf{x},\mathbf{y}) \sim \mathcal{B}} \left[\frac{1}{2}\sum_{k=0}^{L-1}\left[\sigma_k^2\mathrm{Tr}\left(\mathbf{J}^T_{k}(\mathbf{x})
     \mathbf{H}_{L}(\mathbf{x}, \mathbf{y})\mathbf{J}_{k}(\mathbf{x})\right)\right] \right].$$
