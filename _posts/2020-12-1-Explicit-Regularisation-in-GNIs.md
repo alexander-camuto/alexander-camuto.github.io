@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Explicit Regularisation in Gaussian Noise Injections
+title: Explicit Regularisation in GNIs
 ---
 My recent [Neurips paper](https://arxiv.org/abs/2007.07368), written with my friends and colleagues at the University of Oxford, studies the often used and yet poorly understood method of adding Gaussian noise to data and neural network activations. 
 
