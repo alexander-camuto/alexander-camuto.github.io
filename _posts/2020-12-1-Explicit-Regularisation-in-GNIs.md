@@ -32,7 +32,7 @@ In the additive case, we obtain:
 $$\tilde{\mathbf{h}}_k(\mathbf{x}) = \hat{\mathbf{h}}_k(\mathbf{x}) + \mathbf{\epsilon}_k, 
 \qquad \mathbf{\epsilon}_k \sim \mathcal{N}(0,\sigma_k^2\mathbf{I}).  $$
 
-We can express the effect of the Gaussian noise injection on the cost function $$\mathcal{L}$$ as an added term $$\Delta\mathcal{L}$$, which is dependent on the noise additions $\v{\epsilon}$ on the previous hidden layer activations. 
+We can express the effect of the Gaussian noise injection on the cost function $$\mathcal{L}$$ as an added term $$\Delta\mathcal{L}$$, which is dependent on the noise additions $$\mathbf{\epsilon}$$ on the previous hidden layer activations. 
 \begin{equation}
 \tilde{\mathcal{L}}(\mathcal{B};\mathbf{\theta}, \mathbf{\epsilon}) =  \mathcal{L}(\mathcal{B}; \mathbf{\theta}) + \Delta\mathcal{L}(\mathcal{B};\mathbf{\theta},\mathbf{\epsilon}_{L})
 \end{equation}
