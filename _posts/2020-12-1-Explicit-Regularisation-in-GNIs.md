@@ -6,7 +6,7 @@ My recent [Neurips paper](https://arxiv.org/abs/2007.07368), written with my fri
 
 These Gaussian noise injections (GNIs) have an effect in the Fourier domain, which we illustrate in the image below. Each coloured dot represents a neuron's activations. We add GNIs, represented as circles, to each layer's activations bar the output layer. GNIs induce a network for which each layer learns a progressively lower frequency function, represented as a sinusoid matching in colour to its corresponding layer. 
 
-![frequencydiag](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/frequencydiag2.png)
+![frequencydiag](https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/frequencydiag2dark.png)
 
 #### Gaussian Noise Injections
 
