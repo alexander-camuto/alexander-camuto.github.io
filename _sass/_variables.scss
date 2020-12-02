@@ -64,3 +64,9 @@
     --code-bg: var(--gray-900);
   }
 }
+
+@mixin mobile {
+  @media screen and (max-width: 640px) {
+    @content;
+  }
+}
