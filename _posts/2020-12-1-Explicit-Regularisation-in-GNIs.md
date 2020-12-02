@@ -101,7 +101,7 @@ We plot these norms for each layer in a $$\mathrm{ReLU}$$ network. The plot to t
 |<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/layer_layer_grad_nonoise.png" width="200"/> |<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/layer_layer_grad_noise.png" width="200"/>|
 
 
-For GNI models, deeper layers learn smaller $$\|\tilde{\mathbf{W}}_k\|_2^2$$, with the first hidden layer having the largest trace and norm, the second layer having the second largest values and so on so forth. This striation and ordering is notably absent in the models trained without GNIs. This effectively demonstrates that this Fourier domain penalisation disproportionately affects layers nearest to the network output, inducing a network that learns a lower frequency function at each successive layer. ``
+For GNI models, deeper layers learn smaller $$\|\tilde{\mathbf{W}}_k\|_2^2$$, with the first hidden layer having the largest norm, the second layer having the second largest values and so on so forth. This striation and ordering is notably absent in the models trained without GNIs. This effectively demonstrates that this Fourier domain penalisation disproportionately affects layers nearest to the network output, inducing a network that learns a lower frequency function at each successive layer. ``
 
 
 
