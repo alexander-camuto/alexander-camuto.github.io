@@ -107,9 +107,14 @@ $$
 
 where $$\mathcal{O} (\varepsilon)​$$ represents higher order dominated terms that disappear in the limit of small perturbations, $$\Phi^{-1}​$$ is the inverse CDF of the unit normal Gaussian, $$\mathbf{J}^{\mu}_{\phi}(\mathbf{x})_{i,j}=\partial \mathbf{\mu}_\phi(\mathbf{x})_{i} / \partial \mathbf{x}_j​$$ ,  $$\|\cdot\|_F​$$ is the Frobenius norm, $$p(\|\Delta(\mathbf{x})\|_2 \leq r)​$$ is the probability that $$r​$$-robustness holds _before_ the input is perturbed. 
 
-In the figure below we plot numerically estimated margins of robustness against our bound, ignoring higher order terms encapsulated in $$\mathcal{O} (\varepsilon)$$. 
+In the figure below we plot numerically estimated margins of robustness against our bound, ignoring higher order terms encapsulated in $$\mathcal{O}. 
+(\varepsilon)$$. For all three datasets we show our derived bound is a valid lower bound for the true margin of robustness, and is a relatively tight bound. 
 
-<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/mnist_R_vs_Rbound_adv_attack.png" width="200"/>
+|MNIST | fashion-MNIST| CIFAR10|
+|--------|------------|-------------|
+|<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/mnist_R_vs_Rbound_adv_attack.png" width="200"/> |<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/fmnist_R_vs_Rbound_adv_attack.png" width="200"/>|<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/cifar10_R_vs_Rbound_adv_attack.png" width="200"/>|
+
+
 
   
 
