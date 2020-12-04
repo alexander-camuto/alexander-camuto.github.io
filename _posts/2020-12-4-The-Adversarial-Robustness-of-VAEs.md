@@ -52,7 +52,7 @@ In the image below we give an example of adversarial attacks on the CelebA datas
 
 
 
-<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/vae_attack_demo.png" width="200"/>
+<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/vae_attack_demo.png" width="300"/>
 
  
 
