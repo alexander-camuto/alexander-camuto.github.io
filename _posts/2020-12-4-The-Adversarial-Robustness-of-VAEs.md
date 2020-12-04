@@ -52,7 +52,7 @@ In the image below we give an example of adversarial attacks on the CelebA datas
 
 
 
-<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/vae_attack_demo.png" width="400"/>
+<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/vae_attack_demo.png" width="200"/>
 
  
 
@@ -81,7 +81,7 @@ However, to consider the robustness of VAEs, we must not only take into account 
 
 We illustrate  $$r$$-robustness in a VAE visually in the image below. White dots represent possible reconstructions, with the diversity originating from the encoder stochasticity.For $$r$$-robustness to hold, the probability of our reconstruction falling within the red area---a hypersphere of radius $$r$$ centered on $$g_{\theta}(\mathbf{\mu}_\phi(\mathbf{x}))$$ ---needs to be greater than or equal to the probability of falling outside. We denote $$g_{\theta}(\mathbf{z})$$ as the deterministic mapping induced by the VAE's decoder network and $$\mathbf{\mu}_\phi(\mathbf{x})$$ as the mean embedding of the encoder, we can define $$g_{\theta}(\mathbf{\mu}_\phi(\mathbf{x}))$$ to be the 'maximum likelihood' reconstruction, noting that this is a deterministic function.
 
-<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/r-robust-demo-21(1).png" width="400"/>
+<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/r-robust-demo-21(1).png" width="200"/>
 
 
 Using this definition we can begin to charaterise the margin of robustness of a VAE. 
@@ -92,7 +92,7 @@ Given that we have established conditions for $$r$$-robustness in that take into
 
 We illustration this margin $$R^r_{\mathcal{X}}(\mathbf{x})$$,  defined in the \textbf{input} space $$\mathcal{X}$$, in the image below. Red represents represents the subspace where the model is $$r$$-robust  for all perturbed input $$\mathbf{x} + \mathbf{\delta}_x$$ falling in this region, that is all $$\mathbf{\delta}_x : \lVert \mathbf{\delta}_x \rVert_2 \le R^r_{\mathcal{X}}(\mathbf{x})$$. Conversely blue regions illustrate regions where perturbed inputs break the $$r$$-robustness criterion. 
 
-<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/Bound_R_4(1).png" width="400"/>
+<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/Bound_R_4(1).png" width="200"/>
 
 In our work, we assume that the perturbations to the input only affect the encoder mean, and not the encoder variance, which we find surprisingly to be a faithful approximation to what happens in most adversarial settings. Adversaries do the most damage by attacking the encoder mean, and not by attacking the encoder variance. 
 
@@ -114,4 +114,3 @@ In the figure below we plot numerically estimated margins of robustness against 
 
 [2] **Diederik P. Kingma and Max Welling**.  _Auto-encoding variational bayes_, In ICLR 2014
 
-[3]
