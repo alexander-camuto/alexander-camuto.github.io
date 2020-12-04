@@ -12,22 +12,12 @@ Here we briefly review the inherent adversarial robustness of VAEs.
 
 ### Variational Autoencoders
 
-Before introducing VAEs, we quickly describe variational Bayesian methods, a set of inference methods which underpin the training of VAEs.
-
-- Variational Bayesian methods are a family of techniques for performing inference on intractable integrals, such as calculating the posterior over a set of unobserved latent variables $$\mathbf{z}$$ given data $$\mathbf{x}$$.  
-
-- The posterior distribution over this set of unobserved variables is approximated by a variational distribution $$q​$$: $$p(\mathbf{z}|\mathbf{x}) \approx q(\mathbf{z})​$$, where $$q​$$  is chosen to a simpler distribution than ​$$p​$$. 
-
-- It can be shown that minimising the $$\mathrm{KL}$$ divergence between $$q$$ and $$p$$ is equivalent to maximising the evidence lower bound (ELBO) of the data [2]: $$\log p(\mathbf{x}) \geq \log p(\mathbf{x}) - \mathrm{KL}(q||p) = \mathcal{L}(\mathbf{x}) = \mathbb{E}_{q(\mathbf{z})}[\log p(\mathbf{x},\mathbf{z})] - \mathbb{E}_{q(\mathbf{z})}[\log q(\mathbf{z})]$$.  
-
-- In the context of VAEs, **amortised** refers to the fact that the parameters of the distributions $$p​$$ and $$q​$$ are data-dependent, meaning they vary per-datapoint $$\mathbf{x}​$$. This amortisation allows for variational inference to scale to very large datasets.
-
 VAEs, and models they have inspired, are deep neural networks that can perform variational inference for high dimensional data and large datasets. They introduce a joint distribution over data $$\mathbf{x}$$ (in data-space $$\mathcal{X}$$) and a set of latent variables $$\mathbf{z}$$ (in latent-space $$\mathcal{Z}$$): $$p_\theta(\mathbf{x},\mathbf{z})=p_\theta(\mathbf{x}|\mathbf{z})p(\mathbf{z})$$ where $$p_\theta(\mathbf{x}|\mathbf{z})$$ is a  distribution that matches the properties of the data.
 
 The parameters of the likelihood $$p_\theta(\mathbf{x}|\mathbf{z})$$ are encoded by neural networks which take in samples of $$\mathbf{z}$$. A common choice of prior for the space $$\mathcal{Z}$$ is the unit normal Gaussian: $$p(\mathbf{z})=\mathcal{N}(0,\mathcal{I})$$. As exact inference for these models is intractable, one performs _amortised_ stochastic variational inference by introducing another inference network for the latent variables, $$q_\phi(\mathbf{z}|\mathbf{x})$$, which often encodes the parameters of another Gaussian, $$\mathcal{N}(\mu_\phi(\mathbf{x}),\Sigma_\phi(\mathbf{x}))​$$ [2].
 
 
-In the case of VAEs, given the factorisation of $$p​​​$$ specified above and given the amortisation of inference we can write: 
+In the case of VAEs, given the factorisation of $$p $$ specified above and given the amortisation of inference we can write: 
 
 $$
 \mathcal{L}(\mathbf{x})=\mathbb{E}_{q_\phi(\mathbf{z}|\mathbf{x})} \left[\log p_\theta(\mathbf{x}|\mathbf{z})\right] - \mathrm{KL}(q_\phi(\mathbf{z}|\mathbf{x}) || p(\mathbf{z}))
