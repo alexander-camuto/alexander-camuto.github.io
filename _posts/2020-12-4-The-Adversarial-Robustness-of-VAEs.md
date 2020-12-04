@@ -64,7 +64,7 @@ Defining such a margin for VAEs is conceptually more difficult as, in general, t
 
 My [recent paper](https://arxiv.org/abs/2007.07365) makes inroads towards defining a sensitivity margin, which we call $$r​$$-robustness, for probabilistic models.  
 
-**_r_-robustness**, A model, $$f​$$, operating on a point $$\mathbf{x}​$$, that outputs a continuous random variable is $$r​$$-robust for $$r \in \mathbb{R}^+​$$, to a perturbation $$\mathbf{\delta}​$$ and for an arbitrary norm $$\|\cdot\|​$$ if and only if $$$$p(\|f(\mathbf{x} + \mathbf{\delta}) - f(\mathbf{x})\| \leq r) > p(\|f(\mathbf{x} + \mathbf{\delta}) - f(\mathbf{x})\| > r).​$$$$ 
+**_r_-robustness**, A model, $$f$$, operating on a point $$\mathbf{x}$$, that outputs a continuous random variable is $$r$$-robust for $$r \in \mathbb{R}^+$$, to a perturbation $$\mathbf{\delta}$$ and for an arbitrary norm $$\|\cdot\|$$ if and only if $$p(\|f(\mathbf{x} + \mathbf{\delta}) - f(\mathbf{x})\| \leq r) > p(\|f(\mathbf{x} + \mathbf{\delta}) - f(\mathbf{x})\| > r).​$$
 
 We will assume from now on that the norm is taken to be the 2-norm $$\|\cdot\|_2​$$, such that $$r​$$-robustness determines a bound for which changes in the output $$f(\mathbf{x})​$$ induced by the perturbation $$\mathbf{\delta}​$$ are more likely to fall within the hyper-sphere of radius $$r​$$, than not. As $$r​$$ decreases, the criterion for model robustness becomes stricter.
 
@@ -116,3 +116,5 @@ In the figure below we plot numerically estimated margins of robustness against 
 [1] **Kos, J., Fischer, I., & Song, D. (2018b)**.  _Adversarial Examples for Generative Models_.  In IEEE Security and Privacy Workshops 2018.
 
 [2] **Diederik P. Kingma and Max Welling**.  _Auto-encoding variational bayes_, In ICLR 2014
+
+[3]
