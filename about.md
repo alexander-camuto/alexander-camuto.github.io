@@ -6,7 +6,7 @@ permalink: /about/
 
 I am a DPhil candidate at the University of Oxford and at the Alan Turing Institute. 
 
-I have two main strands of research that I'm interested in. 
+I am interested in two main strands of research. 
 
 - The first focuses on studying deep probabilistic models, specifically their adversarial robustness and their ability to build representations that are factorisable and human-interpretable. 
 
