@@ -98,9 +98,11 @@ We illustration this margin $$R^r_{\mathcal{X}}(\mathbf{x})$$,  defined in the \
 In our work, we assume that the perturbations to the input only affect the encoder mean, and not the encoder variance, which we find surprisingly to be a faithful approximation to what happens in most adversarial settings. Adversaries do the most damage by attacking the encoder mean, and not by attacking the encoder variance. 
 
 Recall that a perturbation in $$\mathcal{X}$$, $$\mathbf{\delta}_x$$, induces a perturbation in $$\mathcal{Z}$$, $$\mathbf{\delta}_z$$. To determine the margins for robustness in $$\mathcal{X}$$, we first apply the Neyman-Pearson lemma, assuming a 'worst-case' decoder. This decoder has subspaces in  $$\mathcal{Z}$$, where it is is either robust or non-robust, that are divided by a boundary that is normal to both the induced perturbation $$\mathbf{\delta}_z$$ and to the dimension of minimal variance in $$\mathcal{Z}$$, $$\min_i \mathbf{\sigma}_\phi(\mathbf{x})_i$$. We then determine the minimum perturbation norm in $$\mathcal{X}$$ which induces a perturbation in $$\mathcal{Z}$$ that crosses this boundary.
+
 $$
 R^r_\mathcal{X}(\mathbf{x}) \geq \frac{(\min_i \mathbf{\sigma}_\phi(\mathbf{x})_i)\Phi^{-1}(p(\|\Delta(\mathbf{x})\|_2 \leq r))}{\|\mathbf{J}^{\mu}_{\phi}(\mathbf{x})\|_F } + \mathcal{O} (\mathbf \varepsilon)
 $$
+
 where $$\mathcal{O} (\varepsilon)​$$ represents higher order dominated terms that disappear in the limit of small perturbations, $$\Phi^{-1}​$$ is the inverse CDF of the unit normal Gaussian, $$\mathbf{J}^{\mu}_{\phi}(\mathbf{x})_{i,j}=\partial \mathbf{\mu}_\phi(\mathbf{x})_{i} / \partial \mathbf{x}_j​$$ ,  $$\|\cdot\|_F​$$ is the Frobenius norm, $$p(\|\Delta(\mathbf{x})\|_2 \leq r)​$$ is the probability that $$r​$$-robustness holds _before_ the input is perturbed. 
 
 In the figure below we plot numerically estimated margins of robustness against our bound, ignoring higher order terms encapsulated in $$\mathcal{O} (\varepsilon)$$. 
