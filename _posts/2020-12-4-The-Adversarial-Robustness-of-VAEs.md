@@ -20,7 +20,7 @@ Before introducing VAEs, we quickly describe variational Bayesian methods, a set
 
 - It can be shown that minimising the $$\mathrm{KL}$$ divergence between $$q$$ and $$p$$ is equivalent to maximising the evidence lower bound (ELBO) of the data [2], $$\log p(\mathbf{x}) \geq \log p(\mathbf{x}) - \mathrm{KL}(q\|p) = \mathcal{L}(\mathbf{x}) = \mathbb{E}_{q(\mathbf{z})}[\log p(\mathbf{x},\mathbf{z})] - \mathbb{E}_{q(\mathbf{z})}[\log q(\mathbf{z})]$$.  
 
-- In the context of VAEs, **amortised** refers to the fact that the parameters of the distributions $$p​$$ and $$q​$$ are data-dependent, meaning they vary per-datapoint $$\mathbf{x}​$$. This amortisation allows for variational inference to scale to very large datasets.
+- In the context of VAEs, **amortised inference** refers to the fact that the parameters of the distributions $$p​$$ and $$q​$$ are data-dependent, meaning they vary per-datapoint $$\mathbf{x}​$$. This amortisation allows for variational inference to scale to very large datasets.
 
 VAEs, and models they have inspired, are deep neural networks that can perform variational inference for high dimensional data and large datasets. They introduce a joint distribution over data $$\mathbf{x}$$ (in data-space $$\mathcal{X}$$) and a set of latent variables $$\mathbf{z}$$ (in latent-space $$\mathcal{Z}$$), $$p_\theta(\mathbf{x},\mathbf{z})=p_\theta(\mathbf{x}\mid\mathbf{z})p(\mathbf{z})$$ where $$p_\theta(\mathbf{x}\mid\mathbf{z})$$ is a  distribution that matches the properties of the data.
 
