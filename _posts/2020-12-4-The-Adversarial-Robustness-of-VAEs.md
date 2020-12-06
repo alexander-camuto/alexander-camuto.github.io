@@ -3,7 +3,7 @@ layout: post
 title: The Adversarial Robustness of VAEs
 ---
 
-While previous work has developed algorithmic approaches to attacking and defending VAEs, there remains a lack of formalization for what it even means for a VAE to be robust to adversarial attack. 
+While previous work has developed algorithmic approaches to attacking and defending Variational Autoencoders (VAEs), there remains a lack of formalization for what it even means for a VAE to be robust to adversarial attack. 
 
 In adversarial settings, an agent is trying to alter the behavior of a model towards a specific goal. 
 This could involve, in the case of classification, adding a very small perturbation to an input so as to alter the model's predicted class. For many deep learning models, small changes to data imperceptible to the human eye, can drastically change a model's output.
