@@ -95,7 +95,7 @@ We illustration this margin $$R^r_{\mathcal{X}}(\mathbf{x})$$,  defined in the *
 
 <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/Bound_R_4(1).png" width="200"/>
 
-This theorising is all well and good, but can it be used to predict the robustness of models ? Are models with larger margins $$R^r_{\mathcal{X}}(\mathbf{x})​$$ more robust to adversarial attack ? To test this we measure $$R^r_{\mathcal{X}}(\mathbf{x})​$$ for a range of models and datapoints and subsequently measure the likelihood degradation engendered by *maximum damage attacks*. In these attacks an adversary maximizes, with respect to some perturbation $\delta_x​$, the distance between the VAE reconstruction and the original datapoint $\mathbf{x}​$.We attack the encoder mean _and_ variance: 
+This theorising is all well and good, but can it be used to predict the robustness of models ? Are models with larger margins $$R^r_{\mathcal{X}}(\mathbf{x})​$$ more robust to adversarial attack ? To test this we measure $$R^r_{\mathcal{X}}(\mathbf{x})​$$ for a range of models and datapoints and subsequently measure the likelihood degradation engendered by *maximum damage attacks*. In these attacks an adversary maximizes, with respect to some perturbation $$\delta_x​$$, the distance between the VAE reconstruction and the original datapoint $$\mathbf{x}​$$.We attack the encoder mean _and_ variance: 
 
 $$ \mathbf{\delta}_x^* =\mathrm{argmax}_{\mathbf{\delta}_x}\big(\|g_{\theta}(\mathbf{\mu}_\phi(\mathbf{x} + \mathbf{\delta}_x)+ \mathbf{\eta}\sigma_\phi(\mathbf{x} + \mathbf{\delta}_x)) - g_{\theta}(\mathbf{\mu}_\phi(\mathbf{x}))\|_2\big). ​$$
 
