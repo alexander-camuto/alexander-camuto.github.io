@@ -95,6 +95,23 @@ We illustration this margin $$R^r_{\mathcal{X}}(\mathbf{x})$$,  defined in the *
 
 <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/Bound_R_4(1).png" width="200"/>
 
+This theorising is all well and good, but can it be used to predict the robustness of models ? Are models with larger margins $$R^r_{\mathcal{X}}(\mathbf{x})​$$ more robust to adversarial attack ? To test this we measure $$R^r_{\mathcal{X}}(\mathbf{x})​$$ for a range of models and datapoints and subsequently measure the likelihood degradation engendered by *maximum damage attacks*. In these attacks an adversary maximizes, with respect to some perturbation $\delta_x​$, the distance between the VAE reconstruction and the original datapoint $\mathbf{x}​$.We attack the encoder mean _and_ variance: 
+
+$$ \mathbf{\delta}_x^* =\mathrm{argmax}_{\mathbf{\delta}_x}\big(\|g_{\theta}(\mathbf{\mu}_\phi(\mathbf{x} + \mathbf{\delta}_x)+ \mathbf{\eta}\sigma_\phi(\mathbf{x} + \mathbf{\delta}_x)) - g_{\theta}(\mathbf{\mu}_\phi(\mathbf{x}))\|_2\big). ​$$
+
+In the image below for instance  each subfigure shows from left to right: the original input, a perturbed input made by an adversarial attack, and the reconstruction of the perturbed input.  We show results for VAEs that are robust ($R^r_{\mathcal{X}}(\mathbf{x})\ge\| \delta_x\rVert_2$) and non-robust ($R^r_{\mathcal{X}}(\mathbf{x})<\| \delta_x\rVert_2$) for a given point $\mathbf{x}$ and adversarially selected perturbation $\delta_x$.  It is clear that the robust VAE reconstructions are visually closer to the original input.
+
+<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/adversarial_robustness_illustration.png" width="800"/>
+
+
+We can quantify this achieved robustness numerically, and we return to our original objective  which was to measure $$R^r_{\mathcal{X}}(\mathbf{x})$$ for a range of models and datapoints and subsequently measure the likelihood degradation engendered by maximum damage attacks. More precisely,  we measure the likelihood of the original point $\mathbf{x}$ and quantify the degradation in model performance as the relative log likelihood degradation ($|(\log p(\mathbf{x}|\mathbf{z}^*) - \log p(\mathbf{x}|\mathbf{z}))|/\log p(\mathbf{x}|\mathbf{z})$), where $\mathbf{z}$ is the embedding of $\mathbf{x}$. In the images below it is clear that  that as $$R^r_{\mathcal{X}}(\mathbf{x})$$ increases this degradation lessens, indicating less damaging attacks. Larger 'margins' of robustness correspond to more robust models.
+
+
+|MNIST | fashion-MNIST| CIFAR10|
+|--------|------------|-------------|
+|<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/mnist_R_vs_likelihood_diff.png" width="200"/> |<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/fmnist_R_vs_likelihood_diff_2.png" width="200"/>|<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/cifar10_R_vs_likelihood_diff_adv_est.png" width="200"/>|
+
+
 In our work, we assume that the perturbations to the input only affect the encoder mean, and not the encoder variance, which we find surprisingly to be a faithful approximation to what happens in most adversarial settings. Adversaries do the most damage by attacking the encoder mean, and not by attacking the encoder variance. 
 
 Recall that a perturbation in $$\mathcal{X}$$, $$\mathbf{\delta}_x$$, induces a perturbation in $$\mathcal{Z}$$, $$\mathbf{\delta}_z$$. To determine the margins for robustness in $$\mathcal{X}$$, we first apply the Neyman-Pearson lemma, assuming a 'worst-case' decoder. This decoder has subspaces in  $$\mathcal{Z}$$, where it is is either robust or non-robust, that are divided by a boundary that is normal to both the induced perturbation $$\mathbf{\delta}_z$$ and to the dimension of minimal variance in $$\mathcal{Z}$$, $$\min_i \mathbf{\sigma}_\phi(\mathbf{x})_i$$. We then determine the minimum perturbation norm in $$\mathcal{X}$$ which induces a perturbation in $$\mathcal{Z}$$ that crosses this boundary.
@@ -114,6 +131,7 @@ In the figure below we plot numerically estimated margins of robustness against 
 |--------|------------|-------------|
 |<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/mnist_R_vs_Rbound_adv_attack.png" width="200"/> |<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/fmnist_R_vs_Rbound_adv_attack.png" width="200"/>|<img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/cifar10_R_vs_Rbound_adv_attack.png" width="200"/>|
 
+Note that this bound includes two terms that might contribute to the robustness. The encoder variance plays a prominent role and is a parameter that is easy to control.  The encoder Jacobian is also present, but we found that controlling such values directly can be difficult. Nevertheless, we find in my [recent paper](https://arxiv.org/abs/2007.07365) that $$\beta$$-VAEs [3], which upweight the KL term of the VAE ELBO, induce a regularisation that increases both the encoder variance and penalises large encoder Jacobians. We find that these models are more robust than vanilla VAEs, suggesting that regularising a VAE's latent space, by acting on the KL, is a viable strategy for inducing robust models. 
 
 
   
@@ -125,3 +143,5 @@ In the figure below we plot numerically estimated margins of robustness against 
 [1] **Kos, J., Fischer, I., & Song, D. (2018b)**.  _Adversarial Examples for Generative Models_.  In IEEE Security and Privacy Workshops 2018.
 
 [2] **Diederik P. Kingma and Max Welling**.  _Auto-encoding variational bayes_, In ICLR 2014
+
+[3] **Higgins, I., Matthey, L., Pal, A., Burgess, C., Glorot,X.,  Botvinick,  M.,  Mohamed,  S.,  &  Lerchner,  A.(2017a)** .β-VAE:  Learning  Basic  Visual  Concepts with a Constrained Variational Framework. 
