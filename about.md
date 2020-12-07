@@ -28,6 +28,13 @@ In my spare time I take [pictures](https://www.instagram.com/dantino11).
 
 [Google Scholar](https://scholar.google.com/citations?user=BUJ6H04AAAAJ&hl)
 
+### Awards and Prizes
+
+- Winner [_ETHOnline_ 2020](https://ethglobal.online/)
+- Winner [_HackFS 2020_](https://hack.ethglobal.co/)
+- Winner Imperial College's Stephen Richardson Award 2017 - for the best MEng thesis
+- Winner Imperial College's Governor Prize 2017 - for the best graduating student
+
 ### Contact me
 
 [acamuto@turing.ac.uk](acamuto@turing.ac.uk)
