@@ -12,8 +12,6 @@ I am interested in two main strands of research.
 
 - The second uses functional analysis and Langevin dynamics to study commonly used regularisation methods, such as Gaussian noise injections.
 
-In my spare time I take [pictures](https://www.instagram.com/dantino11). 
-
 ### Publications
 
 - [_Learning Bijective Feature Maps for Linear ICA_](https://arxiv.org/abs/2002.07766), **A Camuto'**, M Willetts', B Paige, C Holmes, S Roberts, arXiv preprint 
@@ -38,3 +36,5 @@ In my spare time I take [pictures](https://www.instagram.com/dantino11).
 ### Contact me
 
 [acamuto@turing.ac.uk](acamuto@turing.ac.uk)
+
+In my spare time I take [pictures](https://www.instagram.com/dantino11). 
