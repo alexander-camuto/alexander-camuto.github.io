@@ -1,0 +1,1 @@
+Check out my latest [Medium post](https://alexander-camuto.medium.com/ais-google-colored-glasses-843d5c8d7034) wherein I argue that Big Tech's dominance of AI research will prove to be strategically disastrous for the West.
