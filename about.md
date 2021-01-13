@@ -18,9 +18,10 @@ I am interested in two main strands of research.
 
 - [_Towards a Theoretical Understanding of the Robustness of Variational Autoencoders_](https://arxiv.org/pdf/2007.07365), **A Camuto**, M Willetts, S Roberts, C Holmes, T Rainforth arXiv preprint
 
+- [_Improving VAEs' Robustness to Adversarial Attack_](https://arxiv.org/abs/1906.00230), M Willetts', **A Camuto'**, T Rainforth, S Roberts, C Holmes, International Conference on Learning Representations, 2021
+
 - [_Explicit Regularisation in Gaussian Noise Injections_](https://papers.nips.cc/paper/2020/hash/c16a5320fa475530d9583c34fd356ef5-Abstract.html) , **A Camuto**, M Willetts, U Şimşekli, S Roberts, C Holmes, Advances in Neural Information Processing Systems, 2020
 
-- [_Improving VAEs' Robustness to Adversarial Attack_](), M Willetts', **A Camuto'**, T Rainforth, S Roberts, C Holmes, arXiv preprint 
 
 <sup>' equal contributions</sup>
 
