@@ -9,6 +9,9 @@
   --gray-700: #030B1C;
   --gray-800: #343a40;
   --gray-900: #212529;
+  
+  --dark-blue: #030B1C;
+  --light-blue: #C1D4E7;
 
   --red: #fa5252;
   --pink: #e64980;
@@ -52,8 +55,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --body-color: var(--gray-300);
-    --body-bg: var(--gray-800);
+    --body-color: var(--dark-blue);
+    --body-bg: var(--light-blue);
 
     --heading-color: #fff;
 
