@@ -14,13 +14,13 @@ I am interested in two main strands of research.
 
 ### Publications
 
-- [_Learning Bijective Feature Maps for Linear ICA_](https://arxiv.org/abs/2002.07766), **A Camuto'**, M Willetts', B Paige, C Holmes, S Roberts, arXiv preprint 
+- [_Learning Bijective Feature Maps for Linear ICA_](https://arxiv.org/abs/2002.07766), **A Camuto'**, M Willetts', B Paige, C Holmes, S Roberts - International Conference on Artificial Intelligence and Statistics, 2021
 
-- [_Towards a Theoretical Understanding of the Robustness of Variational Autoencoders_](https://arxiv.org/pdf/2007.07365), **A Camuto**, M Willetts, S Roberts, C Holmes, T Rainforth arXiv preprint
+- [_Towards a Theoretical Understanding of the Robustness of Variational Autoencoders_](https://arxiv.org/pdf/2007.07365), **A Camuto**, M Willetts, S Roberts, C Holmes, T Rainforth - International Conference on Artificial Intelligence and Statistics, 2021
 
-- [_Improving VAEs' Robustness to Adversarial Attack_](https://arxiv.org/abs/1906.00230), M Willetts', **A Camuto'**, T Rainforth, S Roberts, C Holmes, International Conference on Learning Representations, 2021
+- [_Improving VAEs' Robustness to Adversarial Attack_](https://arxiv.org/abs/1906.00230), M Willetts', **A Camuto'**, T Rainforth, S Roberts, C Holmes - International Conference on Learning Representations, 2021
 
-- [_Explicit Regularisation in Gaussian Noise Injections_](https://papers.nips.cc/paper/2020/hash/c16a5320fa475530d9583c34fd356ef5-Abstract.html) , **A Camuto**, M Willetts, U Şimşekli, S Roberts, C Holmes, Advances in Neural Information Processing Systems, 2020
+- [_Explicit Regularisation in Gaussian Noise Injections_](https://papers.nips.cc/paper/2020/hash/c16a5320fa475530d9583c34fd356ef5-Abstract.html) , **A Camuto**, M Willetts, U Şimşekli, S Roberts, C Holmes - Advances in Neural Information Processing Systems, 2020
 
 
 <sup>' equal contributions</sup>
