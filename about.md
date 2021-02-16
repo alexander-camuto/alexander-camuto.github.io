@@ -14,6 +14,10 @@ I am interested in two main strands of research.
 
 ### Publications
 
+- [_Certifiably Robust Variational Autoencoders_](https://arxiv.org/abs/2102.07559), B Barrett, **A Camuto**,  M Willetts, T Rainforth - arxiv, 2021
+
+- [_Asymmetric Heavy Tails and Implicit Bias in Gaussian Noise Injections_](https://arxiv.org/pdf/2102.07006), **A Camuto'**, X Wang', L Zhu, C Holmes, M Gürbüzbalaban, U Şimşekli - arxiv, 2021
+
 - [_Learning Bijective Feature Maps for Linear ICA_](https://arxiv.org/abs/2002.07766), **A Camuto'**, M Willetts', B Paige, C Holmes, S Roberts - International Conference on Artificial Intelligence and Statistics, 2021
 
 - [_Towards a Theoretical Understanding of the Robustness of Variational Autoencoders_](https://arxiv.org/pdf/2007.07365), **A Camuto**, M Willetts, S Roberts, C Holmes, T Rainforth - International Conference on Artificial Intelligence and Statistics, 2021
