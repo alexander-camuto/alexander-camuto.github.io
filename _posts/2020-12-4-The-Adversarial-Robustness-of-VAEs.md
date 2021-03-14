@@ -73,7 +73,9 @@ Because this criterion is applicable to probabilistic models with continuous out
 #### A Robustness Margin for VAEs
 
 We want to define a margin in a VAE's input space for which it is robust to perturbations of a given input. 
-Perturbations that fall within this margin should not break our criterion for robustness. Formally, we want a margin in $$\mathcal{X}$$, $$R^r_{\mathcal{X}}(\mathbf{x})$$, for which any distorted input $$\mathbf{x}+\delta_x$$, where $$\|\mathbf{\delta}_x\|_2 < R^r_{\mathcal{X}}(\mathbf{x})$$ is the perturbation, satisfies $$r$$-robustness when reconstructed. 
+Perturbations that fall within this margin should not break our criterion for robustness. 
+
+Formally, we want a margin in $$\mathcal{X}$$, $$R^r_{\mathcal{X}}(\mathbf{x})$$, for which any distorted input $$\mathbf{x}+\delta_x$$, where $$\|\mathbf{\delta}_x\|_2 < R^r_{\mathcal{X}}(\mathbf{x})$$ is the perturbation, satisfies $$r$$-robustness when reconstructed. 
 
 ##### r-robustness for VAEs
 
