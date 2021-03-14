@@ -93,7 +93,7 @@ Using this definition we can begin to charaterise the margin of robustness of a 
 
 Given that we have established conditions for $$r$$-robustness in that take into account latent space sampling, we can now return to our original objective, which was to determine a margin in the data-space $$\mathcal{X}$$ for which a VAE is robust to perturbations on its input. Recall that this implicitly means that we want to define a bound for robustness given two sources of perturbations, the stochasticity of the encoder, and a hypothetical input perturbation $$\mathbf{\delta}_x$$.
 
-We illustration this margin $$R^r_{\mathcal{X}}(\mathbf{x})$$,  defined in the **input** space $$\mathcal{X}$$, in the image below. Red represents represents the subspace where the model is $$r$$-robust  for all perturbed input $$\mathbf{x} + \mathbf{\delta}_x$$ falling in this region, that is all $$\mathbf{\delta}_x : \lVert \mathbf{\delta}_x \rVert_2 \le R^r_{\mathcal{X}}(\mathbf{x})$$. Conversely blue regions illustrate regions where perturbed inputs break the $$r$$-robustness criterion. 
+We illustrate this margin $$R^r_{\mathcal{X}}(\mathbf{x})$$,  defined in the **input** space $$\mathcal{X}$$, in the image below. Red represents represents the subspace where the model is $$r$$-robust  for all perturbed input $$\mathbf{x} + \mathbf{\delta}_x$$ falling in this region, that is all $$\mathbf{\delta}_x : \lVert \mathbf{\delta}_x \rVert_2 \le R^r_{\mathcal{X}}(\mathbf{x})$$. Conversely blue regions illustrate regions where perturbed inputs break the $$r$$-robustness criterion. 
 
 <img src="https://raw.githubusercontent.com/alexander-camuto/alexander-camuto.github.io/master/images/Bound_R_4(1).png" width="200"/>
 
