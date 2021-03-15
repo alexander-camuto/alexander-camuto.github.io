@@ -148,4 +148,4 @@ Note that this bound includes two terms that might contribute to the robustness.
 
 [3] **Higgins, I., Matthey, L., Pal, A., Burgess, C., Glorot,X.,  Botvinick,  M.,  Mohamed,  S.,  &  Lerchner,  A.(2017a)** .β-VAE:  Learning  Basic  Visual  Concepts with a Constrained Variational Framework. 
 
-[4] **Kumar, A. & Poole, B. (2020)**.  On Implicit Regular-ization in β-VAEs.
+[4] **Kumar, A. & Poole, B. (2020)**.  On Implicit Regularization in β-VAEs.
