@@ -147,3 +147,5 @@ Note that this bound includes two terms that might contribute to the robustness.
 [2] **Diederik P. Kingma and Max Welling**.  _Auto-encoding variational bayes_, In ICLR 2014
 
 [3] **Higgins, I., Matthey, L., Pal, A., Burgess, C., Glorot,X.,  Botvinick,  M.,  Mohamed,  S.,  &  Lerchner,  A.(2017a)** .β-VAE:  Learning  Basic  Visual  Concepts with a Constrained Variational Framework. 
+
+[4] **Kumar, A. & Poole, B. (2020)**.  On Implicit Regular-ization inβ-VAEs.
