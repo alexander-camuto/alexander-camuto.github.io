@@ -14,9 +14,13 @@ I am interested in two main strands of research.
 
 ### Publications
 
+- [_Fractal Structure and Generalization Properties of StochasticOptimization Algorithms_](https://arxiv.org/abs/2106.04881), **A Camuto**,  G Deligiannidis, M Erdogdu, M Gürbüzbalaban, U Şimşekli, L Zhu - arxiv, 2021
+- 
+- [_Variational Autoencoders: A Harmonic Perspective_](https://arxiv.org/abs/2105.14866), **A Camuto**,  M Willetts - arxiv, 2021
+
 - [_Certifiably Robust Variational Autoencoders_](https://arxiv.org/abs/2102.07559), B Barrett, **A Camuto**,  M Willetts, T Rainforth - arxiv, 2021
 
-- [_Asymmetric Heavy Tails and Implicit Bias in Gaussian Noise Injections_](https://arxiv.org/pdf/2102.07006), **A Camuto'**, X Wang', L Zhu, C Holmes, M Gürbüzbalaban, U Şimşekli - arxiv, 2021
+- [_Asymmetric Heavy Tails and Implicit Bias in Gaussian Noise Injections_](https://arxiv.org/pdf/2102.07006), **A Camuto'**, X Wang', L Zhu, C Holmes, M Gürbüzbalaban, U Şimşekli - International Conference on Machine Learning, 2021
 
 - [_Learning Bijective Feature Maps for Linear ICA_](https://arxiv.org/abs/2002.07766), **A Camuto'**, M Willetts', B Paige, C Holmes, S Roberts - International Conference on Artificial Intelligence and Statistics, 2021
 
@@ -33,6 +37,7 @@ I am interested in two main strands of research.
 
 ### Awards and Prizes
 
+- Winner [_Web3 Weekend_ 2021](https://showcase.ethglobal.co/web3weekend/artvaults)
 - Winner [_ETHOnline_ 2020](https://hack.ethglobal.co/showcase/myel-receIkh8KxVLAtUpH)
 - Winner [_HackFS 2020_](https://hack.ethglobal.co/showcase/myel-receOUiPSd63148qZ)
 - Winner Imperial College's Stephen Richardson Award 2017 - for the best MEng thesis
