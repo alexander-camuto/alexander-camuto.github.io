@@ -15,7 +15,7 @@ I am interested in two main strands of research.
 ### Publications
 
 - [_Fractal Structure and Generalization Properties of StochasticOptimization Algorithms_](https://arxiv.org/abs/2106.04881), **A Camuto**,  G Deligiannidis, M Erdogdu, M Gürbüzbalaban, U Şimşekli, L Zhu - arxiv, 2021
-- 
+
 - [_Variational Autoencoders: A Harmonic Perspective_](https://arxiv.org/abs/2105.14866), **A Camuto**,  M Willetts - arxiv, 2021
 
 - [_Certifiably Robust Variational Autoencoders_](https://arxiv.org/abs/2102.07559), B Barrett, **A Camuto**,  M Willetts, T Rainforth - arxiv, 2021
